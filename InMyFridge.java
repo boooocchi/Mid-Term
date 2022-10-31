@@ -173,9 +173,9 @@ public class InMyFridge {
 
                     //delete the item
                     case 4:
-                    System.out.println("-----------------------------------------------------------");
+                    System.out.println("------------------------------------------------------------");
                     System.out.println("Please enter the name of the item you would like to delete");
-                    System.out.println("-----------------------------------------------------------");
+                    System.out.println("------------------------------------------------------------");
                     showAllItems();
                    
                     System.out.println("-------------------------------");
