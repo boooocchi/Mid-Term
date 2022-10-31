@@ -6,13 +6,14 @@ public class App {
         try (Scanner input = new Scanner(System.in)) {
 
             //assumption that a user has already been created
-            Account account = new Account("Kota", "password");
+            Account account = new Account("Kota", "pass");
             InMyFridge fridge=new InMyFridge();
+
             
             clrscr();
-            System.out.println("====================");
+            System.out.println("=====================================");
             System.out.println("Welcome to the 'What's in my Fridge'");
-            System.out.println("====================");
+            System.out.println("=====================================");
             
             while(true){
             System.out.println("Please enter your username");

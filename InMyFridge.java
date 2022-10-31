@@ -101,10 +101,10 @@ public class InMyFridge {
                 "Please Select an option from the below\n"+
                 "1: New Item\n"+
                 "2: Show all the items\n"+
-                "3: Search for the item\n"+
+                "3: Search for an item\n"+
                 "4: Delete the Item\n"+
-                "5: Modify the number of the item\n"+
-                "6: Modify the expiration date of the item\n"+
+                "5: Modify the number of an item\n"+
+                "6: Modify the expiration date of an item\n"+
                 "7: Log out\n"+
                 "========================================="
                 );
@@ -115,9 +115,9 @@ public class InMyFridge {
                     
                     //add new item
                     case 1:
-                    System.out.println("-------------------------------");
+                        System.out.println("-----------------------------");
                         System.out.println("Enter the name of the item");
-                        System.out.println("-------------------------------");
+                        System.out.println("-----------------------------");
                         String item=input.nextLine();
                         
                         System.out.println("-------------------------------");
@@ -127,15 +127,16 @@ public class InMyFridge {
                         
                         
                    
-                        System.out.println("-------------------------------");
+                        System.out.println("------------------------------------------------------------------------------");
                         System.out.println("Enter the expiration Date in the following format: yyyy/MM/dd (ex. 2022/10/12)");
-                        System.out.println("-------------------------------");
+                        System.out.println("------------------------------------------------------------------------------");
                         String exDate=input.nextLine();
                        
 
                         try{    
                             simpleDate(exDate);
                             input(item,numItem,exDate);
+                            App.clrscr(); 
                             System.out.println("You have successfuly added " + item);
                             
                         }catch(ParseException e){
@@ -153,16 +154,16 @@ public class InMyFridge {
                     break;
                     //search for the item
                     case 3:
-                    System.out.println("-------------------------------");
+                    System.out.println("-----------------------------------");
                     System.out.println("Please enter the name of the item");
-                    System.out.println("-------------------------------");
+                    System.out.println("-----------------------------------");
                     try {
                         String searchItem=input.nextLine();
                     for(Map.Entry<String, ItemsDetails> m: items.entrySet()) {
                         if(m.getKey().equals(searchItem)) {
                             System.out.println("■ " + m.getKey() + " ("
-            +m.getValue().getNumItem()+"), "+ "EXP: " + m.getValue().getExDate());
-                        
+                            +m.getValue().getNumItem()+"), "+ "EXP: " + m.getValue().getExDate());
+                        break;
                     }else{
                         errorMessage("There is no " + searchItem);
                     }}}catch(Exception e){
@@ -172,9 +173,9 @@ public class InMyFridge {
 
                     //delete the item
                     case 4:
-                    System.out.println("-------------------------------");
+                    System.out.println("-----------------------------------------------------------");
                     System.out.println("Please enter the name of the item you would like to delete");
-                    System.out.println("-------------------------------");
+                    System.out.println("-----------------------------------------------------------");
                     showAllItems();
                    
                     System.out.println("-------------------------------");
@@ -193,22 +194,23 @@ public class InMyFridge {
                  
                     //modify the item number
                     case 5:
-                    System.out.println("-------------------------------");
+                    System.out.println("-------------------------------------------------------------------------");
                     System.out.println("Please enter the name of the item you would like to modify the number of");
-                    System.out.println("-------------------------------");
+                    System.out.println("-------------------------------------------------------------------------");
                     showAllItems();
                     System.out.println("-------------------------------");
                     try{
                     String modifiedItem=input.nextLine();
                     if (items.containsKey(modifiedItem)){
-                        System.out.println("-------------------------------");
+                    System.out.println("---------------------------------");
                     System.out.println("Please enter the number of items");
-                    System.out.println("-------------------------------");
+                    System.out.println("---------------------------------");
                    try{
                     int modifiedNumItem=Integer.parseInt(input.nextLine());
                     modifyNumItem(modifiedItem, modifiedNumItem);
                     System.out.println("you have successfully modified the number of "+modifiedItem+".");}catch(Exception e){
                         errorMessage("Wrong input! Please enter the NUMBER ");
+                        break;
                     }
                     }else{
                         errorMessage("there is no "+modifiedItem+ " in your fridge");
@@ -221,22 +223,23 @@ public class InMyFridge {
             
                     //modify the exDate
                     case 6:
-                    System.out.println("-------------------------------");
+                    System.out.println("----------------------------------------------------------------------------------");
                     System.out.println("Please enter the name of the item you would like to modify the expiration date of");
-                    System.out.println("-------------------------------");
+                    System.out.println("----------------------------------------------------------------------------------");
                     showAllItems();
                     System.out.println("-------------------------------");
                     try{
                     String modifiedItem2=input.nextLine();
                     if (items.containsKey(modifiedItem2)){
-                        System.out.println("-------------------------------");
-                    System.out.println("Please enter the new expiration date");
-                    System.out.println("-------------------------------");
+                    System.out.println("-----------------------------------------------------------------------------------------");
+                    System.out.println("Please enter the new expiration datein the FLOLLOWING FORMAT: yyyy/MM/dd (ex. 2022/10/12)");
+                    System.out.println("-----------------------------------------------------------------------------------------");
                     try{
                     String modifiedExdate=input.nextLine();
                     simpleDate(modifiedExdate);
                     modifyExdate(modifiedItem2, modifiedExdate);
                     System.out.println("you have successfully modified "+modifiedItem2+"'s expiration date.");
+                    break;
                     }catch(Exception e){
                         errorMessage("Wrong input! Please enter the DATE in the FLOLLOWING FORMAT: yyyy/MM/dd (ex. 2022/10/12)");
                     }
@@ -255,6 +258,7 @@ public class InMyFridge {
                     System.out.println("Invalid option. Please try again.");
                     break;
                 }
+                
             }while(option!=7);
 
             System.out.println("Thank you for using our service.");

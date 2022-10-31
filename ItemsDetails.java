@@ -5,10 +5,10 @@ public class ItemsDetails {
     private int numItem;
     private String exDate;
 
-    public ItemsDetails(int numItem, String exDate2) {
+    public ItemsDetails(int numItem, String exDate) {
         // this.item = item;
         this.numItem = numItem;
-        this.exDate = exDate2;
+        this.exDate = exDate;
     }
 
     
@@ -18,13 +18,6 @@ public class ItemsDetails {
 
 
 
-    // public String getItem() {
-    //     return item;
-    // }
-
-    // public void setItem(String item) {
-    //     this.item = item;
-    // }
     public int getNumItem() {
         return numItem;
     }
