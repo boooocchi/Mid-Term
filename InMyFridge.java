@@ -127,9 +127,9 @@ public class InMyFridge {
                         
                         
                    
-                        System.out.println("------------------------------------------------------------------------------");
+                        System.out.println("----------------------------------------------------------------------------");
                         System.out.println("Enter the expiration Date in the following format: yyyy/MM/dd (ex. 2022/10/12)");
-                        System.out.println("------------------------------------------------------------------------------");
+                        System.out.println("----------------------------------------------------------------------------");
                         String exDate=input.nextLine();
                        
 
@@ -173,9 +173,9 @@ public class InMyFridge {
 
                     //delete the item
                     case 4:
-                    System.out.println("------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------------------");
                     System.out.println("Please enter the name of the item you would like to delete");
-                    System.out.println("------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------------------");
                     showAllItems();
                    
                     System.out.println("-------------------------------");
