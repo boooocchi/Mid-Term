@@ -127,9 +127,9 @@ public class InMyFridge {
                         
                         
                    
-                        System.out.println("------------------------------------------------------------------------------");
+                        System.out.println("----------------------------------------------------------------------------");
                         System.out.println("Enter the expiration Date in the following format: yyyy/MM/dd (ex. 2022/10/12)");
-                        System.out.println("------------------------------------------------------------------------------");
+                        System.out.println("----------------------------------------------------------------------------");
                         String exDate=input.nextLine();
                        
 
